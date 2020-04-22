@@ -22,8 +22,12 @@ export const validationSchema = yup.object().shape({
     .string()
     .required('No password provided.')
     .min(8, 'Password is too short - should be 8 chars minimum.')
-    .matches(/(?=.*[0-9])/, 'Password must contain a number'),
+    .matches(/(?=.*[0-9])/, 'Password must contain a number')
+    .ensure()
+    ,
 });
+
+// validationSchema.validateSync({email: ''})
 
 export const articleSchema = yup.object().shape({
   title: yup
