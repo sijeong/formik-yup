@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { Formik, useFormik } from 'formik';
+import React, { useEffect, useRef, memo } from 'react';
+import { Formik, useFormik, Field } from 'formik';
 import { validationSchema } from './model';
 import './Form.css';
 import { InputTag } from './InputTag';
@@ -16,7 +16,7 @@ const ValidatedLoginForm = () => {
     isValid,
     validateForm,
   } = useFormik({
-    initialValues: { email: '', password: '' },
+    initialValues: { email: '', password: '', memo: '' },
     validationSchema,
     onSubmit: () => {},
   });
@@ -54,6 +54,12 @@ const ValidatedLoginForm = () => {
       {errors.password && touched.password && (
         <div className="input-feedback">{errors.password}</div>
       )}
+      <textarea
+        placeholder="aaa"
+        name="memo"
+        value={values.memo}
+        onChange={handleChange}
+        onBlur={handleBlur}></textarea>
       <InputTag />
       {/* <ReactTags handleAddition={() => handleAddition} handleDelete={() => handleDelete} /> */}
       <button type="submit" disabled={isSubmitting || !isValid}>
