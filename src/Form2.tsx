@@ -8,17 +8,17 @@ const validationSchema = yup.object({
 });
 
 export const Register = () => {
-//   const validate = (values) => {
-//     const errors = {};
-//     if (!values.firstName) {
-//       errors.firstName = 'Required';
-//     }
-//     if (!values.lastName) {
-//       errors.lastName = 'Required';
-//     }
+  //   const validate = (values) => {
+  //     const errors = {};
+  //     if (!values.firstName) {
+  //       errors.firstName = 'Required';
+  //     }
+  //     if (!values.lastName) {
+  //       errors.lastName = 'Required';
+  //     }
 
-//     return errors;
-//   };
+  //     return errors;
+  //   };
 
   const { handleSubmit, handleChange, values, errors } = useFormik({
     initialValues: {

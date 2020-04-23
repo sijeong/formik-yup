@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, memo } from 'react';
-import { Formik, useFormik, Field } from 'formik';
-import { validationSchema } from './model';
+import { useFormik } from 'formik';
+import React, { useEffect } from 'react';
 import './Form.css';
 import { InputTag } from './InputTag';
+import { validationSchema } from './model';
 
 const ValidatedLoginForm = () => {
   const {
